@@ -13,6 +13,7 @@ const locations = ['Goa', 'Mumbai'];
 
 export default function ClientBriefForm({ onSubmit }) {
   const [form, setForm] = useState(initialState);
+  const [validationMsg, setValidationMsg] = useState('');
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -30,7 +31,15 @@ export default function ClientBriefForm({ onSubmit }) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (!form.location || !form.budget) return;
+    if (!form.location) {
+      setValidationMsg('Please select a location.');
+      return;
+    }
+    if (!form.budget) {
+      setValidationMsg('Please enter a budget.');
+      return;
+    }
+    setValidationMsg('');
     onSubmit({
       ...form,
       budget: Number(form.budget)
@@ -40,6 +49,7 @@ export default function ClientBriefForm({ onSubmit }) {
   return (
     <form onSubmit={handleSubmit} style={{ maxWidth: 400, margin: '0 auto' }}>
       <h2>Client Brief</h2>
+      {validationMsg && <div style={{ color: 'red', marginBottom: 8 }}>{validationMsg}</div>}
       <label>Location:
         <select name="location" value={form.location} onChange={handleChange} required>
           <option value="">Select</option>
