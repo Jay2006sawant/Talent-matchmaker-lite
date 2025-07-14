@@ -1,3 +1,6 @@
+// Scoring and matching logic for Talent Matchmaker Lite
+
+// Score a single creator against a client brief
 function scoreMatch(creator, brief) {
   let score = 0;
   let rationale = [];
@@ -30,6 +33,7 @@ function scoreMatch(creator, brief) {
   };
 }
 
+// Get top N matches for a client brief
 function getTopMatches(talentProfiles, brief, topN = 3) {
   const results = talentProfiles.map(creator => scoreMatch(creator, brief));
   return results.sort((a, b) => b.score - a.score).slice(0, topN);
