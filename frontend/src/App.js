@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ClientBriefForm from './components/ClientBriefForm';
+import LoadingSpinner from './components/LoadingSpinner';
 
 function MatchResultCard({ creator }) {
   return (
@@ -43,7 +44,7 @@ function App() {
     <div style={{ padding: 24 }}>
       <h1>Talent Matchmaker Lite</h1>
       <ClientBriefForm onSubmit={handleBriefSubmit} />
-      {loading && <p>Loading matches...</p>}
+      {loading && <LoadingSpinner />}
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {matches.length > 0 && (
         <div>
