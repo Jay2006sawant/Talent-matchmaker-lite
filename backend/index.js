@@ -10,9 +10,19 @@ function loadJson(filename) {
   return JSON.parse(fs.readFileSync(path.join(DATA_DIR, filename), 'utf-8'));
 }
 
-let talentProfiles = loadJson('Talent Profiles.json');
-let gigsDataset = loadJson('Gigs Dataset.json');
-let matchHistory = loadJson('Match History.json');
+// Improved error handling for data loading
+function safeLoadJson(filename) {
+  try {
+    return loadJson(filename);
+  } catch (err) {
+    console.error(`Error loading ${filename}:`, err.message);
+    return null;
+  }
+}
+
+let talentProfiles = safeLoadJson('Talent Profiles.json') || [];
+let gigsDataset = safeLoadJson('Gigs Dataset.json') || [];
+let matchHistory = safeLoadJson('Match History.json') || [];
 
 app.use(express.json());
 
@@ -30,6 +40,12 @@ app.get('/api/gigs', (req, res) => {
 
 app.post('/api/match', (req, res) => {
   const brief = req.body;
+  if (!brief || !brief.location || !brief.budget || !Array.isArray(brief.skills_required)) {
+    return res.status(400).json({ error: 'Missing or invalid client brief fields.' });
+  }
+  if (!talentProfiles.length) {
+    return res.status(500).json({ error: 'Talent profiles data not available.' });
+  }
   const results = talentProfiles.map(creator => {
     let score = 0;
     let rationale = [];
