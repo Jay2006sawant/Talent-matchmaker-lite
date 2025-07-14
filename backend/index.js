@@ -1,5 +1,6 @@
 // Express server setup for Talent Matchmaker Lite
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 5000;
 const fs = require('fs');
@@ -30,6 +31,7 @@ let gigsDataset = safeLoadJson('Gigs Dataset.json') || [];
 let matchHistory = safeLoadJson('Match History.json') || [];
 
 app.use(express.json());
+app.use(cors());
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
