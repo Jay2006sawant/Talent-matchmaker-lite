@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "location": "Goa",
+    "skills_required": ["portrait", "pastel"],
+    "budget": 75000,
+    "style_preferences": ["candid"]
+  },
+  {
+    "id": 2,
+    "location": "Mumbai",
+    "skills_required": ["fashion", "editorial"],
+    "budget": 120000,
+    "style_preferences": ["studio"]
+  }
+] 
