@@ -92,6 +92,12 @@ button[type="submit"]:hover {
   margin: 16px 0;
 }
 
+input:focus, select:focus, button:focus {
+  outline: 2px solid #3182ce;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #90cdf4;
+}
+
 @media (max-width: 600px) {
   body {
     padding: 0;
