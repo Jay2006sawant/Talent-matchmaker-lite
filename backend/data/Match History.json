@@ -3,5 +3,55 @@
     "creatorId": 2,
     "feedback": "up",
     "timestamp": "2025-07-15T14:59:35.703Z"
+  },
+  {
+    "creatorId": 1,
+    "feedback": "up",
+    "timestamp": "2025-07-15T15:06:23.042Z"
+  },
+  {
+    "creatorId": 1,
+    "feedback": "down",
+    "timestamp": "2025-07-15T15:06:30.375Z"
+  },
+  {
+    "creatorId": 1,
+    "feedback": "up",
+    "timestamp": "2025-07-15T15:06:53.691Z"
+  },
+  {
+    "creatorId": 1,
+    "feedback": "up",
+    "timestamp": "2025-07-15T15:07:13.120Z"
+  },
+  {
+    "creatorId": 1,
+    "feedback": "up",
+    "timestamp": "2025-07-15T15:07:20.464Z"
+  },
+  {
+    "creatorId": 1,
+    "feedback": "up",
+    "timestamp": "2025-07-15T15:08:29.835Z"
+  },
+  {
+    "creatorId": 1,
+    "feedback": "up",
+    "timestamp": "2025-07-15T15:10:22.097Z"
+  },
+  {
+    "creatorId": 1,
+    "feedback": "up",
+    "timestamp": "2025-07-15T15:10:47.419Z"
+  },
+  {
+    "creatorId": 1,
+    "feedback": "up",
+    "timestamp": "2025-07-15T15:11:47.675Z"
+  },
+  {
+    "creatorId": 1,
+    "feedback": "up",
+    "timestamp": "2025-07-15T15:13:35.600Z"
   }
 ]

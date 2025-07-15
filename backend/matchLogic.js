@@ -1,5 +1,14 @@
 // Scoring and matching logic for Talent Matchmaker Lite
 
+// Jaccard similarity for fuzzy matching
+function jaccardSimilarity(arr1, arr2) {
+  const set1 = new Set(arr1.map(s => s.toLowerCase()));
+  const set2 = new Set(arr2.map(s => s.toLowerCase()));
+  const intersection = new Set([...set1].filter(x => set2.has(x)));
+  const union = new Set([...set1, ...set2]);
+  return union.size === 0 ? 0 : intersection.size / union.size;
+}
+
 // Score a single creator against a client brief
 function scoreMatch(creator, brief) {
   let score = 0;
@@ -20,11 +29,18 @@ function scoreMatch(creator, brief) {
     score += skillMatches.length * 2;
     rationale.push(`${skillMatches.length} skill(s) matched (+${skillMatches.length * 2})`);
   }
-  // Style match
-  let styleMatches = creator.tags.filter(tag => (brief.style_preferences || []).includes(tag));
-  if (styleMatches.length > 0) {
-    score += styleMatches.length * 1;
-    rationale.push(`${styleMatches.length} style keyword(s) matched (+${styleMatches.length})`);
+  // Fuzzy style match using Jaccard similarity
+  let styleMatches = 0;
+  (brief.style_preferences || []).forEach(stylePref => {
+    creator.tags.forEach(tag => {
+      if (jaccardSimilarity([stylePref], [tag]) >= 0.5) {
+        styleMatches++;
+      }
+    });
+  });
+  if (styleMatches > 0) {
+    score += styleMatches * 1;
+    rationale.push(`${styleMatches} fuzzy style match(es) (+${styleMatches})`);
   }
   return {
     ...creator,

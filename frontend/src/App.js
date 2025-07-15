@@ -83,8 +83,8 @@ function App() {
         <div>
           <h2 className="mb-3">Top Matches</h2>
           {matches.map(creator => {
-            // Find the most recent feedback for this creator
-            const creatorFeedback = feedbackData.filter(f => f.creatorId === creator.id);
+            // Find the most recent feedback for this creator (compare as strings)
+            const creatorFeedback = feedbackData.filter(f => String(f.creatorId) === String(creator.id));
             const lastFeedback = creatorFeedback.length > 0 ? creatorFeedback[creatorFeedback.length - 1].feedback : null;
             return (
               <MatchResultCard key={creator.id} creator={creator} onFeedback={handleFeedback} previousFeedback={lastFeedback} />
