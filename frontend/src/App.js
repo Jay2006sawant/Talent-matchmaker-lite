@@ -8,6 +8,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [feedbackMsg, setFeedbackMsg] = useState('');
+  const [feedbackData, setFeedbackData] = useState([]);
 
   const handleBriefSubmit = async (brief) => {
     setLoading(true);
@@ -22,6 +23,14 @@ function App() {
       if (!res.ok) throw new Error('Failed to fetch matches');
       const data = await res.json();
       setMatches(data);
+      // Fetch feedback for these matches
+      const feedbackRes = await fetch('http://localhost:5000/api/feedback');
+      if (feedbackRes.ok) {
+        const feedback = await feedbackRes.json();
+        setFeedbackData(feedback);
+      } else {
+        setFeedbackData([]);
+      }
     } catch (err) {
       setError(err.message || 'Error fetching matches');
     } finally {
@@ -41,6 +50,12 @@ function App() {
       if (!res.ok) throw new Error('Failed to send feedback');
       setFeedbackMsg('Thank you for your feedback!');
       setTimeout(() => setFeedbackMsg(''), 2000);
+      // Refresh feedback data after submitting
+      const feedbackRes = await fetch('http://localhost:5000/api/feedback');
+      if (feedbackRes.ok) {
+        const feedbackArr = await feedbackRes.json();
+        setFeedbackData(feedbackArr);
+      }
     } catch (err) {
       setFeedbackMsg('Error sending feedback.');
       setTimeout(() => setFeedbackMsg(''), 2000);
@@ -51,6 +66,7 @@ function App() {
   const handleFormChange = () => {
     setMatches([]);
     setError('');
+    setFeedbackData([]);
   };
 
   return (
@@ -66,9 +82,14 @@ function App() {
       {matches.length > 0 && (
         <div>
           <h2 className="mb-3">Top Matches</h2>
-          {matches.map(creator => (
-            <MatchResultCard key={creator.id} creator={creator} onFeedback={handleFeedback} />
-          ))}
+          {matches.map(creator => {
+            // Find the most recent feedback for this creator
+            const creatorFeedback = feedbackData.filter(f => f.creatorId === creator.id);
+            const lastFeedback = creatorFeedback.length > 0 ? creatorFeedback[creatorFeedback.length - 1].feedback : null;
+            return (
+              <MatchResultCard key={creator.id} creator={creator} onFeedback={handleFeedback} previousFeedback={lastFeedback} />
+            );
+          })}
         </div>
       )}
     </div>
