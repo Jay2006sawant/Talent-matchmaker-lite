@@ -18,7 +18,7 @@ function App() {
       const res = await fetch('http://localhost:5000/api/match', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(brief)
+        body: JSON.stringify(brief) // brief now includes remoteOnly
       });
       if (!res.ok) throw new Error('Failed to fetch matches');
       const data = await res.json();
