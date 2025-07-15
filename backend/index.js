@@ -58,8 +58,13 @@ app.post('/api/match', (req, res) => {
   if (!talentProfiles.length) {
     return res.status(500).json({ error: 'Talent profiles data not available.' });
   }
+  // Filter for remote creators if requested
+  let filteredProfiles = talentProfiles;
+  if (brief.remoteOnly) {
+    filteredProfiles = talentProfiles.filter(c => c.remote === true);
+  }
   // Use refactored logic to get top matches
-  const top3 = getTopMatches(talentProfiles, brief, 3);
+  const top3 = getTopMatches(filteredProfiles, brief, 3);
   res.json(top3);
 });
 
