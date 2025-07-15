@@ -7,6 +7,7 @@ function App() {
   const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [feedbackMsg, setFeedbackMsg] = useState('');
 
   const handleBriefSubmit = async (brief) => {
     setLoading(true);
@@ -28,10 +29,22 @@ function App() {
     }
   };
 
-  // Feedback handler (to be implemented)
-  const handleFeedback = (creatorId, feedback) => {
-    // This will be implemented in the next step
-    console.log('Feedback:', creatorId, feedback);
+  // Feedback handler
+  const handleFeedback = async (creatorId, feedback) => {
+    try {
+      setFeedbackMsg('');
+      const res = await fetch('http://localhost:5000/api/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ creatorId, feedback })
+      });
+      if (!res.ok) throw new Error('Failed to send feedback');
+      setFeedbackMsg('Thank you for your feedback!');
+      setTimeout(() => setFeedbackMsg(''), 2000);
+    } catch (err) {
+      setFeedbackMsg('Error sending feedback.');
+      setTimeout(() => setFeedbackMsg(''), 2000);
+    }
   };
 
   // Clear matches when form changes
@@ -46,6 +59,7 @@ function App() {
       <ClientBriefForm onSubmit={handleBriefSubmit} onFormChange={handleFormChange} />
       {loading && <LoadingSpinner />}
       {error && <p className="alert alert-danger text-center">{error}</p>}
+      {feedbackMsg && <div className="alert alert-info text-center">{feedbackMsg}</div>}
       {!loading && !error && matches && matches.length === 0 && (
         <p className="text-secondary text-center mt-4">No matches found. Please try different criteria.</p>
       )}
