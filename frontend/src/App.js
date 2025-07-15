@@ -35,17 +35,17 @@ function App() {
   };
 
   return (
-    <div style={{ padding: 24 }}>
-      <h1>Talent Matchmaker Lite</h1>
+    <div className="container py-4">
+      <h1 className="text-center mb-4">Talent Matchmaker Lite</h1>
       <ClientBriefForm onSubmit={handleBriefSubmit} onFormChange={handleFormChange} />
       {loading && <LoadingSpinner />}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {error && <p className="alert alert-danger text-center">{error}</p>}
       {!loading && !error && matches && matches.length === 0 && (
-        <p style={{ color: '#555', textAlign: 'center', marginTop: 24 }}>No matches found. Please try different criteria.</p>
+        <p className="text-secondary text-center mt-4">No matches found. Please try different criteria.</p>
       )}
       {matches.length > 0 && (
         <div>
-          <h2>Top Matches</h2>
+          <h2 className="mb-3">Top Matches</h2>
           {matches.map(creator => (
             <MatchResultCard key={creator.id} creator={creator} />
           ))}

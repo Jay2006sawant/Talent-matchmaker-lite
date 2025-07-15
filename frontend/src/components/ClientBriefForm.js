@@ -49,51 +49,62 @@ export default function ClientBriefForm({ onSubmit, onFormChange }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ maxWidth: 400, margin: '0 auto' }}>
-      <h2>Client Brief</h2>
-      {validationMsg && <div style={{ color: 'red', marginBottom: 8 }}>{validationMsg}</div>}
-      <label>Location:
-        <select name="location" value={form.location} onChange={handleChange} required>
+    <form onSubmit={handleSubmit} className="p-4 bg-white rounded shadow-sm mb-4" style={{ maxWidth: 500, margin: '0 auto' }}>
+      <h2 className="mb-3">Client Brief</h2>
+      {validationMsg && <div className="alert alert-danger py-1 mb-2">{validationMsg}</div>}
+      <div className="mb-3">
+        <label className="form-label">Location</label>
+        <select name="location" value={form.location} onChange={handleChange} required className="form-select">
           <option value="">Select</option>
           {locations.map(loc => <option key={loc} value={loc}>{loc}</option>)}
         </select>
-      </label>
-      <br />
-      <label>Skills Required:</label>
-      <div>
-        {skillsList.map(skill => (
-          <label key={skill} style={{ marginRight: 8 }}>
-            <input
-              type="checkbox"
-              checked={form.skills_required.includes(skill)}
-              onChange={() => handleMultiSelect('skills_required', skill)}
-            /> {skill}
-          </label>
-        ))}
       </div>
-      <label>Budget:
+      <div className="mb-3">
+        <label className="form-label">Skills Required</label>
+        <div className="d-flex flex-wrap gap-2">
+          {skillsList.map(skill => (
+            <div className="form-check me-2" key={skill}>
+              <input
+                className="form-check-input"
+                type="checkbox"
+                checked={form.skills_required.includes(skill)}
+                onChange={() => handleMultiSelect('skills_required', skill)}
+                id={`skill-${skill}`}
+              />
+              <label className="form-check-label" htmlFor={`skill-${skill}`}>{skill}</label>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="mb-3">
+        <label className="form-label">Budget</label>
         <input
           type="number"
           name="budget"
           value={form.budget}
           onChange={handleChange}
           required
+          className="form-control"
         />
-      </label>
-      <br />
-      <label>Style Preferences:</label>
-      <div>
-        {styleList.map(style => (
-          <label key={style} style={{ marginRight: 8 }}>
-            <input
-              type="checkbox"
-              checked={form.style_preferences.includes(style)}
-              onChange={() => handleMultiSelect('style_preferences', style)}
-            /> {style}
-          </label>
-        ))}
       </div>
-      <button type="submit" style={{ marginTop: 16 }}>Find Matches</button>
+      <div className="mb-3">
+        <label className="form-label">Style Preferences</label>
+        <div className="d-flex flex-wrap gap-2">
+          {styleList.map(style => (
+            <div className="form-check me-2" key={style}>
+              <input
+                className="form-check-input"
+                type="checkbox"
+                checked={form.style_preferences.includes(style)}
+                onChange={() => handleMultiSelect('style_preferences', style)}
+                id={`style-${style}`}
+              />
+              <label className="form-check-label" htmlFor={`style-${style}`}>{style}</label>
+            </div>
+          ))}
+        </div>
+      </div>
+      <button type="submit" className="btn btn-primary mt-2 w-100">Find Matches</button>
     </form>
   );
 } 
