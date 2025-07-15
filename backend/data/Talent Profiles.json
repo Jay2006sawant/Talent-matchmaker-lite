@@ -8,7 +8,8 @@
     "experience": 5,
     "budget_min": 50000,
     "budget_max": 100000,
-    "portfolio": "https://amanportfolio.com"
+    "portfolio": "https://amanportfolio.com",
+    "remote": true
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
     "experience": 7,
     "budget_min": 70000,
     "budget_max": 150000,
-    "portfolio": "https://priyaphotos.com"
+    "portfolio": "https://priyaphotos.com",
+    "remote": false
   },
   {
     "id": 3,
@@ -30,6 +32,7 @@
     "experience": 4,
     "budget_min": 40000,
     "budget_max": 90000,
-    "portfolio": "https://rahulshots.com"
+    "portfolio": "https://rahulshots.com",
+    "remote": true
   }
 ] 
