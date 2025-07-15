@@ -4,7 +4,8 @@ const initialState = {
   location: '',
   skills_required: [],
   budget: '',
-  style_preferences: []
+  style_preferences: [],
+  remoteOnly: false
 };
 
 const skillsList = ['portrait', 'pastel', 'wedding', 'fashion', 'editorial', 'travel', 'landscape', 'candid'];
@@ -16,8 +17,8 @@ export default function ClientBriefForm({ onSubmit, onFormChange }) {
   const [validationMsg, setValidationMsg] = useState('');
 
   const handleChange = e => {
-    const { name, value } = e.target;
-    setForm(f => ({ ...f, [name]: value }));
+    const { name, value, type, checked } = e.target;
+    setForm(f => ({ ...f, [name]: type === 'checkbox' ? checked : value }));
     if (onFormChange) onFormChange();
   };
 
@@ -103,6 +104,19 @@ export default function ClientBriefForm({ onSubmit, onFormChange }) {
             </div>
           ))}
         </div>
+      </div>
+      <div className="mb-3 form-check">
+        <input
+          className="form-check-input"
+          type="checkbox"
+          name="remoteOnly"
+          id="remoteOnly"
+          checked={form.remoteOnly}
+          onChange={handleChange}
+        />
+        <label className="form-check-label" htmlFor="remoteOnly">
+          Remote Only
+        </label>
       </div>
       <button type="submit" className="btn btn-primary mt-2 w-100">Find Matches</button>
     </form>
