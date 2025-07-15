@@ -63,6 +63,30 @@ app.post('/api/match', (req, res) => {
   res.json(top3);
 });
 
+// Feedback endpoint: receives feedback and stores in Match History.json
+app.post('/api/feedback', (req, res) => {
+  const { creatorId, feedback } = req.body;
+  if (!creatorId || !['up', 'down'].includes(feedback)) {
+    return res.status(400).json({ error: 'Invalid feedback data.' });
+  }
+  const entry = {
+    creatorId,
+    feedback,
+    timestamp: new Date().toISOString()
+  };
+  // Load current match history
+  let matchHistory = safeLoadJson('Match History.json') || [];
+  matchHistory.push(entry);
+  // Save back to file
+  try {
+    fs.writeFileSync(path.join(DATA_DIR, 'Match History.json'), JSON.stringify(matchHistory, null, 2), 'utf-8');
+    res.json({ success: true });
+  } catch (err) {
+    console.error('Error saving feedback:', err.message);
+    res.status(500).json({ error: 'Failed to save feedback.' });
+  }
+});
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
