@@ -8,8 +8,16 @@ export default function MatchResultCard({ creator }) {
         <h6 className="card-subtitle mb-2 text-primary">Score: {creator.score}</h6>
         <p className="card-text"><strong>Reason:</strong> {creator.rationale}</p>
         {creator.portfolio && (
-          <a href={creator.portfolio} target="_blank" rel="noopener noreferrer" className="btn btn-outline-secondary btn-sm">Portfolio</a>
+          <a href={creator.portfolio} target="_blank" rel="noopener noreferrer" className="btn btn-outline-secondary btn-sm me-2">Portfolio</a>
         )}
+        <div className="mt-3">
+          <button type="button" className="btn btn-success btn-sm me-2" title="Thumbs Up">
+            <span role="img" aria-label="Thumbs Up">👍</span>
+          </button>
+          <button type="button" className="btn btn-danger btn-sm" title="Thumbs Down">
+            <span role="img" aria-label="Thumbs Down">👎</span>
+          </button>
+        </div>
       </div>
     </div>
   );
