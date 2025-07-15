@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function MatchResultCard({ creator }) {
+export default function MatchResultCard({ creator, onFeedback }) {
   return (
     <div className="card shadow-sm mb-3 MatchResultCard">
       <div className="card-body">
@@ -11,10 +11,10 @@ export default function MatchResultCard({ creator }) {
           <a href={creator.portfolio} target="_blank" rel="noopener noreferrer" className="btn btn-outline-secondary btn-sm me-2">Portfolio</a>
         )}
         <div className="mt-3">
-          <button type="button" className="btn btn-success btn-sm me-2" title="Thumbs Up">
+          <button type="button" className="btn btn-success btn-sm me-2" title="Thumbs Up" onClick={() => onFeedback && onFeedback(creator.id, 'up')}>
             <span role="img" aria-label="Thumbs Up">👍</span>
           </button>
-          <button type="button" className="btn btn-danger btn-sm" title="Thumbs Down">
+          <button type="button" className="btn btn-danger btn-sm" title="Thumbs Down" onClick={() => onFeedback && onFeedback(creator.id, 'down')}>
             <span role="img" aria-label="Thumbs Down">👎</span>
           </button>
         </div>

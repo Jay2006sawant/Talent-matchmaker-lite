@@ -28,6 +28,12 @@ function App() {
     }
   };
 
+  // Feedback handler (to be implemented)
+  const handleFeedback = (creatorId, feedback) => {
+    // This will be implemented in the next step
+    console.log('Feedback:', creatorId, feedback);
+  };
+
   // Clear matches when form changes
   const handleFormChange = () => {
     setMatches([]);
@@ -47,7 +53,7 @@ function App() {
         <div>
           <h2 className="mb-3">Top Matches</h2>
           {matches.map(creator => (
-            <MatchResultCard key={creator.id} creator={creator} />
+            <MatchResultCard key={creator.id} creator={creator} onFeedback={handleFeedback} />
           ))}
         </div>
       )}
