@@ -34,6 +34,9 @@ function App() {
       <ClientBriefForm onSubmit={handleBriefSubmit} />
       {loading && <LoadingSpinner />}
       {error && <p style={{ color: 'red' }}>{error}</p>}
+      {!loading && !error && matches && matches.length === 0 && (
+        <p style={{ color: '#555', textAlign: 'center', marginTop: 24 }}>No matches found. Please try different criteria.</p>
+      )}
       {matches.length > 0 && (
         <div>
           <h2>Top Matches</h2>
