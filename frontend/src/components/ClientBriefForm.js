@@ -11,13 +11,14 @@ const skillsList = ['portrait', 'pastel', 'wedding', 'fashion', 'editorial', 'tr
 const styleList = ['candid', 'natural light', 'studio', 'bold', 'outdoor', 'vivid'];
 const locations = ['Goa', 'Mumbai'];
 
-export default function ClientBriefForm({ onSubmit }) {
+export default function ClientBriefForm({ onSubmit, onFormChange }) {
   const [form, setForm] = useState(initialState);
   const [validationMsg, setValidationMsg] = useState('');
 
   const handleChange = e => {
     const { name, value } = e.target;
     setForm(f => ({ ...f, [name]: value }));
+    if (onFormChange) onFormChange();
   };
 
   const handleMultiSelect = (name, value) => {
@@ -27,6 +28,7 @@ export default function ClientBriefForm({ onSubmit }) {
         : [...f[name], value];
       return { ...f, [name]: arr };
     });
+    if (onFormChange) onFormChange();
   };
 
   const handleSubmit = e => {

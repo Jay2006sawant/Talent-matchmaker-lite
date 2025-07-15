@@ -28,10 +28,16 @@ function App() {
     }
   };
 
+  // Clear matches when form changes
+  const handleFormChange = () => {
+    setMatches([]);
+    setError('');
+  };
+
   return (
     <div style={{ padding: 24 }}>
       <h1>Talent Matchmaker Lite</h1>
-      <ClientBriefForm onSubmit={handleBriefSubmit} />
+      <ClientBriefForm onSubmit={handleBriefSubmit} onFormChange={handleFormChange} />
       {loading && <LoadingSpinner />}
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {!loading && !error && matches && matches.length === 0 && (
