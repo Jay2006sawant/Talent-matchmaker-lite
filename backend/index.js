@@ -87,6 +87,16 @@ app.post('/api/feedback', (req, res) => {
   }
 });
 
+// Endpoint to get all feedback from Match History.json
+app.get('/api/feedback', (req, res) => {
+  try {
+    const matchHistory = safeLoadJson('Match History.json') || [];
+    res.json(matchHistory);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to load feedback.' });
+  }
+});
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
