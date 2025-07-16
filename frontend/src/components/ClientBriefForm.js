@@ -50,18 +50,19 @@ export default function ClientBriefForm({ onSubmit, onFormChange }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="p-4 bg-white rounded shadow-sm mb-4" style={{ maxWidth: 500, margin: '0 auto' }}>
-      <h2 className="mb-3">Client Brief</h2>
+    <form onSubmit={handleSubmit} className="p-4 bg-white rounded shadow-sm mb-4" style={{ maxWidth: 500, margin: '0 auto', fontFamily: 'Montserrat, Arial, sans-serif' }}>
+      <h2 className="mb-3 fw-bold" style={{ fontFamily: 'Montserrat, Arial, sans-serif' }}>Client Brief</h2>
       {validationMsg && <div className="alert alert-danger py-1 mb-2">{validationMsg}</div>}
-      <div className="mb-3">
-        <label className="form-label">Location</label>
-        <select name="location" value={form.location} onChange={handleChange} required className="form-select">
+      <div className="form-floating mb-3">
+        <select name="location" value={form.location} onChange={handleChange} required className="form-select" id="locationSelect">
           <option value="">Select</option>
           {locations.map(loc => <option key={loc} value={loc}>{loc}</option>)}
         </select>
+        <label htmlFor="locationSelect">Location</label>
+        <div className="form-text">Where is your project based?</div>
       </div>
       <div className="mb-3">
-        <label className="form-label">Skills Required</label>
+        <label className="form-label fw-semibold">Skills Required</label>
         <div className="d-flex flex-wrap gap-2">
           {skillsList.map(skill => (
             <div className="form-check me-2" key={skill}>
@@ -76,9 +77,9 @@ export default function ClientBriefForm({ onSubmit, onFormChange }) {
             </div>
           ))}
         </div>
+        <div className="form-text">Select all that apply.</div>
       </div>
-      <div className="mb-3">
-        <label className="form-label">Budget</label>
+      <div className="form-floating mb-3">
         <input
           type="number"
           name="budget"
@@ -86,10 +87,14 @@ export default function ClientBriefForm({ onSubmit, onFormChange }) {
           onChange={handleChange}
           required
           className="form-control"
+          id="budgetInput"
+          placeholder="Budget"
         />
+        <label htmlFor="budgetInput">Budget</label>
+        <div className="form-text">Enter your budget in INR (e.g., 75000).</div>
       </div>
       <div className="mb-3">
-        <label className="form-label">Style Preferences</label>
+        <label className="form-label fw-semibold">Style Preferences</label>
         <div className="d-flex flex-wrap gap-2">
           {styleList.map(style => (
             <div className="form-check me-2" key={style}>
@@ -104,6 +109,7 @@ export default function ClientBriefForm({ onSubmit, onFormChange }) {
             </div>
           ))}
         </div>
+        <div className="form-text">Choose the style(s) you prefer for your project.</div>
       </div>
       <div className="mb-3 form-check">
         <input
@@ -117,8 +123,9 @@ export default function ClientBriefForm({ onSubmit, onFormChange }) {
         <label className="form-check-label" htmlFor="remoteOnly">
           Remote Only
         </label>
+        <div className="form-text">Check to include only creators available for remote work.</div>
       </div>
-      <button type="submit" className="btn btn-primary mt-2 w-100">Find Matches</button>
+      <button type="submit" className="btn btn-primary mt-2 w-100 fw-bold" style={{ fontFamily: 'Montserrat, Arial, sans-serif' }}>Find Matches</button>
     </form>
   );
 } 
