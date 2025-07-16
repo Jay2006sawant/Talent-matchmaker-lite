@@ -3,6 +3,22 @@ import ClientBriefForm from './components/ClientBriefForm';
 import LoadingSpinner from './components/LoadingSpinner';
 import MatchResultCard from './components/MatchResultCard';
 
+function Toast({ message, onClose }) {
+  if (!message) return null;
+  return (
+    <div style={{ position: 'fixed', top: 24, right: 24, zIndex: 9999, minWidth: 220 }}>
+      <div className="toast show align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div className="d-flex">
+          <div className="toast-body">
+            {message}
+          </div>
+          <button type="button" className="btn-close btn-close-white me-2 m-auto" aria-label="Close" onClick={onClose}></button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function App() {
   const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -71,11 +87,11 @@ function App() {
 
   return (
     <div className="container py-4">
+      <Toast message={feedbackMsg} onClose={() => setFeedbackMsg('')} />
       <h1 className="text-center mb-4">Talent Matchmaker Lite</h1>
       <ClientBriefForm onSubmit={handleBriefSubmit} onFormChange={handleFormChange} />
       {loading && <LoadingSpinner />}
       {error && <p className="alert alert-danger text-center">{error}</p>}
-      {feedbackMsg && <div className="alert alert-info text-center">{feedbackMsg}</div>}
       {!loading && !error && matches && matches.length === 0 && (
         <p className="text-secondary text-center mt-4">No matches found. Please try different criteria.</p>
       )}
