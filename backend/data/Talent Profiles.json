@@ -163,6 +163,135 @@
     "past_credits": [
       "Murillo-Joseph"
     ]
+  },
+  {
+    "id": "tal_003",
+    "name": "Deborah Wong",
+    "city": "Mumbai",
+    "hometown": "Mumbai",
+    "categories": ["Editor", "Director"],
+    "skills": ["Corporate Shoots", "Documentaries", "Weddings"],
+    "style_tags": ["editorial", "bold", "minimal"],
+    "budget_range": "\u20b913060\u2013\u20b9102456",
+    "experience_years": 6,
+    "platforms": ["Google Drive", "Instagram"],
+    "soft_skills": {"communication": "average", "punctuality": "average", "collaboration": "average", "initiative": "good", "adaptability": "average"},
+    "software_skills": {"ChatGPT": 4, "Lightroom": 5, "Premiere Pro": 8, "Final Cut Pro": 5},
+    "languages": ["Tamil", "Marathi"],
+    "past_credits": ["Serrano-Golden", "Robinson Ltd", "Woodard, Rogers and Hamilton"],
+    "endorsements": ["Anthony Goodwin III", "Troy Lawrence"],
+    "interest_tags": ["sports", "travel", "tech"],
+    "availability_calendar": [{"city": "Hyderabad", "from": "2025-10-06", "to": "2025-10-30"}],
+    "tier_tags": ["six star service", "potential backup"],
+    "portfolio": [
+      {"title": "Corporate Shoots Portfolio 1", "tags": ["minimal", "cinematic"], "keywords": ["natural light", "outdoor", "mood"]},
+      {"title": "Social Media Portfolio 2", "tags": ["classic", "bold"], "keywords": ["mood", "motion", "portrait"]},
+      {"title": "Branding Portfolio 3", "tags": ["cinematic", "bold"], "keywords": ["mood", "motion", "natural light"]},
+      {"title": "Corporate Shoots Portfolio 4", "tags": ["editorial", "cinematic"], "keywords": ["motion", "outdoor", "mood"]}
+    ]
+  },
+  {
+    "id": "tal_004",
+    "name": "Tamara Olson",
+    "city": "Mumbai",
+    "hometown": "Kolkata",
+    "categories": ["Photographer", "Stylist"],
+    "skills": ["Branding", "Documentaries", "Social Media"],
+    "style_tags": ["bold", "vibrant", "cinematic"],
+    "budget_range": "\u20b939177\u2013\u20b9179213",
+    "experience_years": 7,
+    "platforms": ["Instagram"],
+    "soft_skills": {"communication": "good", "punctuality": "good", "collaboration": "excellent", "initiative": "excellent", "adaptability": "average"},
+    "software_skills": {"Final Cut Pro": 6, "Adobe Photoshop": 3, "Lightroom": 3, "ChatGPT": 10},
+    "languages": ["Hindi", "English"],
+    "past_credits": ["Hernandez, Vaughan and Hernandez", "Russell-Lopez", "Sanchez-Garrett"],
+    "endorsements": ["Michael Wright"],
+    "interest_tags": ["music", "lifestyle", "travel"],
+    "availability_calendar": [{"city": "Bangalore", "from": "2025-07-26", "to": "2025-10-17"}],
+    "tier_tags": ["beginner", "potential backup"],
+    "portfolio": [
+      {"title": "Corporate Shoots Portfolio 1", "tags": ["classic", "editorial"], "keywords": ["motion", "natural light", "mood"]},
+      {"title": "Documentaries Portfolio 2", "tags": ["bold", "vibrant"], "keywords": ["portrait", "outdoor", "natural light"]}
+    ]
+  },
+  {
+    "id": "tal_005",
+    "name": "Michael Guerrero",
+    "city": "Bangalore",
+    "hometown": "Goa",
+    "categories": ["Designer", "Stylist"],
+    "skills": ["Fashion Shoots", "Weddings", "Branding"],
+    "style_tags": ["vibrant", "cinematic", "documentary"],
+    "budget_range": "\u20b929255\u2013\u20b9130217",
+    "experience_years": 4,
+    "platforms": ["Personal Website"],
+    "soft_skills": {"communication": "excellent", "punctuality": "excellent", "collaboration": "excellent", "initiative": "good", "adaptability": "average"},
+    "software_skills": {"Final Cut Pro": 9, "Lightroom": 7, "SEO": 3, "Adobe Photoshop": 10},
+    "languages": ["Marathi", "Hindi"],
+    "past_credits": ["Peterson PLC", "Nelson and Sons", "Lawson Group"],
+    "endorsements": ["Cynthia Edwards"],
+    "interest_tags": ["tech", "sports", "music"],
+    "availability_calendar": [{"city": "Kolkata", "from": "2025-10-10", "to": "2025-11-05"}],
+    "tier_tags": ["intermediate", "six star service"],
+    "portfolio": [
+      {"title": "Branding Portfolio 1", "tags": ["cinematic", "vibrant"], "keywords": ["natural light", "mood", "motion"]},
+      {"title": "Documentaries Portfolio 2", "tags": ["minimal", "bold"], "keywords": ["mood", "portrait", "outdoor"]},
+      {"title": "Fashion Shoots Portfolio 3", "tags": ["editorial", "vibrant"], "keywords": ["natural light", "portrait", "outdoor"]}
+    ]
+  },
+  {
+    "id": "tal_006",
+    "name": "Jared Irwin",
+    "city": "Chennai",
+    "hometown": "Pune",
+    "categories": ["Editor", "Director"],
+    "skills": ["Documentaries", "Social Media", "Weddings"],
+    "style_tags": ["documentary", "classic", "editorial"],
+    "budget_range": "\u20b929147\u2013\u20b9180116",
+    "experience_years": 4,
+    "platforms": ["Behance", "Instagram"],
+    "soft_skills": {"communication": "excellent", "punctuality": "good", "collaboration": "average", "initiative": "good", "adaptability": "good"},
+    "software_skills": {"SEO": 8, "Premiere Pro": 5, "Lightroom": 7, "ChatGPT": 3},
+    "languages": ["Bengali", "English"],
+    "past_credits": ["Joseph, Larson and Lane", "Wilson-Roberts"],
+    "endorsements": ["Karen Ramsey", "Nicholas Watson"],
+    "interest_tags": ["lifestyle", "sports", "tech"],
+    "availability_calendar": [{"city": "Bangalore", "from": "2025-08-25", "to": "2025-11-09"}],
+    "tier_tags": ["six star service", "intermediate"],
+    "portfolio": [
+      {"title": "Documentaries Portfolio 1", "tags": ["vibrant", "minimal"], "keywords": ["portrait", "natural light", "motion"]},
+      {"title": "Social Media Portfolio 2", "tags": ["minimal", "documentary"], "keywords": ["portrait", "outdoor", "mood"]},
+      {"title": "Weddings Portfolio 3", "tags": ["cinematic", "minimal"], "keywords": ["natural light", "mood", "motion"]},
+      {"title": "Weddings Portfolio 4", "tags": ["editorial", "classic"], "keywords": ["outdoor", "motion", "mood"]},
+      {"title": "Fashion Shoots Portfolio 5", "tags": ["bold", "cinematic"], "keywords": ["motion", "natural light", "outdoor"]}
+    ]
+  },
+  {
+    "id": "tal_007",
+    "name": "Lindsay Watson",
+    "city": "Goa",
+    "hometown": "Chennai",
+    "categories": ["Videographer", "Animator"],
+    "skills": ["Fashion Shoots", "Branding", "Weddings"],
+    "style_tags": ["vibrant", "classic", "documentary"],
+    "budget_range": "\u20b927708\u2013\u20b9109615",
+    "experience_years": 3,
+    "platforms": ["Google Drive", "Personal Website", "Behance"],
+    "soft_skills": {"communication": "average", "punctuality": "excellent", "collaboration": "good", "initiative": "good", "adaptability": "good"},
+    "software_skills": {"Premiere Pro": 8, "Adobe Photoshop": 8, "Final Cut Pro": 6, "SEO": 9},
+    "languages": ["Bengali", "Marathi"],
+    "past_credits": ["Henry Ltd", "Howard Ltd", "Barnett-Young"],
+    "endorsements": ["Mary Li"],
+    "interest_tags": ["travel", "music", "sports"],
+    "availability_calendar": [{"city": "Delhi", "from": "2025-10-01", "to": "2025-11-10"}],
+    "tier_tags": ["beginner", "pro"],
+    "portfolio": [
+      {"title": "Fashion Shoots Portfolio 1", "tags": ["bold", "minimal"], "keywords": ["motion", "outdoor", "mood"]},
+      {"title": "Corporate Shoots Portfolio 2", "tags": ["cinematic", "classic"], "keywords": ["motion", "outdoor", "mood"]},
+      {"title": "Documentaries Portfolio 3", "tags": ["minimal", "cinematic"], "keywords": ["natural light", "mood", "outdoor"]},
+      {"title": "Fashion Shoots Portfolio 4", "tags": ["vibrant", "minimal"], "keywords": ["portrait", "outdoor", "mood"]},
+      {"title": "Documentaries Portfolio 5", "tags": ["bold", "cinematic"], "keywords": ["motion", "natural light", "outdoor"]}
+    ]
   }
 ]
 
