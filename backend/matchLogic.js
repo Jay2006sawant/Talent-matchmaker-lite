@@ -32,7 +32,7 @@ function scoreMatch(creator, brief) {
   // Fuzzy style match using Jaccard similarity
   let styleMatches = 0;
   (brief.style_preferences || []).forEach(stylePref => {
-    creator.tags.forEach(tag => {
+    (creator.tags || []).forEach(tag => {
       if (jaccardSimilarity([stylePref], [tag]) >= 0.5) {
         styleMatches++;
       }
