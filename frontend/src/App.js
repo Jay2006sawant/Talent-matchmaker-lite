@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ClientBriefForm from './components/ClientBriefForm';
 import LoadingSpinner from './components/LoadingSpinner';
 import MatchResultCard from './components/MatchResultCard';
@@ -25,6 +25,10 @@ function App() {
   const [error, setError] = useState('');
   const [feedbackMsg, setFeedbackMsg] = useState('');
   const [feedbackData, setFeedbackData] = useState([]);
+
+  useEffect(() => {
+    document.title = 'Talent Matchmaker Lite';
+  }, []);
 
   const handleBriefSubmit = async (brief) => {
     setLoading(true);

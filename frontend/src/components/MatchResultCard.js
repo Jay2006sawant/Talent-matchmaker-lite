@@ -46,10 +46,26 @@ export default function MatchResultCard({ creator, onFeedback, previousFeedback 
             <span className="badge bg-info text-dark ms-1">Previous feedback: {previousFeedback === 'up' ? '👍' : '👎'}</span>
           )}
           <div className="mt-3">
-            <button type="button" className="btn btn-success btn-sm me-2" title="Thumbs Up" onClick={() => onFeedback && onFeedback(creator.id, 'up')}>
+            <button
+              type="button"
+              className="btn btn-success btn-sm me-2"
+              title="Thumbs Up"
+              aria-label={`Give thumbs up feedback for ${creator.name}`}
+              tabIndex={0}
+              onClick={() => onFeedback && onFeedback(creator.id, 'up')}
+              onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') onFeedback && onFeedback(creator.id, 'up'); }}
+            >
               <span role="img" aria-label="Thumbs Up">👍</span>
             </button>
-            <button type="button" className="btn btn-danger btn-sm" title="Thumbs Down" onClick={() => onFeedback && onFeedback(creator.id, 'down')}>
+            <button
+              type="button"
+              className="btn btn-danger btn-sm"
+              title="Thumbs Down"
+              aria-label={`Give thumbs down feedback for ${creator.name}`}
+              tabIndex={0}
+              onClick={() => onFeedback && onFeedback(creator.id, 'down')}
+              onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') onFeedback && onFeedback(creator.id, 'down'); }}
+            >
               <span role="img" aria-label="Thumbs Down">👎</span>
             </button>
           </div>
