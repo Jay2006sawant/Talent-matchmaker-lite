@@ -98,6 +98,31 @@ input:focus, select:focus, button:focus {
   box-shadow: 0 0 0 2px #90cdf4;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.MatchResultCard {
+  animation: fadeInUp 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.MatchResultCard:hover {
+  box-shadow: 0 8px 32px rgba(59,130,246,0.18), 0 2px 8px rgba(59,130,246,0.10);
+  transform: translateY(-4px) scale(1.01);
+}
+
+.btn:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 8px rgba(59,130,246,0.10);
+}
+
 @media (max-width: 600px) {
   body {
     padding: 0;
