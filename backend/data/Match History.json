@@ -68,5 +68,25 @@
     "creatorId": 2,
     "feedback": "down",
     "timestamp": "2025-07-15T16:59:49.264Z"
+  },
+  {
+    "creatorId": 3,
+    "feedback": "down",
+    "timestamp": "2025-07-15T17:44:19.733Z"
+  },
+  {
+    "creatorId": 3,
+    "feedback": "down",
+    "timestamp": "2025-07-15T17:44:20.785Z"
+  },
+  {
+    "creatorId": 3,
+    "feedback": "down",
+    "timestamp": "2025-07-15T17:44:21.582Z"
+  },
+  {
+    "creatorId": 3,
+    "feedback": "up",
+    "timestamp": "2025-07-15T17:44:22.539Z"
   }
 ]
