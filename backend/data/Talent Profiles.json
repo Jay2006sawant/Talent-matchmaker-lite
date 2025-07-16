@@ -1,0 +1,183 @@
+[
+  {
+    "id": "tal_001",
+    "name": "Tyler Baker",
+    "city": "Delhi",
+    "hometown": "Delhi",
+    "categories": [
+      "Director",
+      "Photographer"
+    ],
+    "skills": [
+      "Fashion Shoots",
+      "Corporate Shoots",
+      "Weddings"
+    ],
+    "style_tags": [
+      "documentary",
+      "vibrant",
+      "cinematic"
+    ],
+    "budget_range": "\u20b933546\u2013\u20b966470",
+    "experience_years": 8,
+    "platforms": [
+      "Personal Website",
+      "Behance"
+    ],
+    "soft_skills": {
+      "communication": "good",
+      "punctuality": "good",
+      "collaboration": "good",
+      "initiative": "excellent",
+      "adaptability": "good"
+    },
+    "software_skills": {
+      "ChatGPT": 5,
+      "Premiere Pro": 4,
+      "Adobe Photoshop": 5,
+      "Final Cut Pro": 7
+    },
+    "languages": [
+      "Tamil",
+      "Marathi"
+    ],
+    "past_credits": [
+      "Baxter-Peterson",
+      "Salazar, Craig and Saunders",
+      "Campbell-Strickland"
+    ],
+    "endorsements": [
+      "Andre Maldonado",
+      "Nathaniel White"
+    ],
+    "interest_tags": [
+      "sports",
+      "music",
+      "lifestyle"
+    ],
+    "availability_calendar": [
+      {
+        "city": "Mumbai",
+        "from": "2025-09-24",
+        "to": "2025-11-09"
+      }
+    ],
+    "tier_tags": [
+      "intermediate",
+      "potential backup"
+    ],
+    "portfolio": [
+      {
+        "title": "Branding Portfolio 1",
+        "tags": [
+          "vibrant",
+          "minimal"
+        ],
+        "keywords": [
+          "mood",
+          "natural light",
+          "portrait"
+        ]
+      },
+      {
+        "title": "Documentaries Portfolio 2",
+        "tags": [
+          "documentary",
+          "classic"
+        ],
+        "keywords": [
+          "mood",
+          "outdoor",
+          "natural light"
+        ]
+      },
+      {
+        "title": "Weddings Portfolio 3",
+        "tags": [
+          "vibrant",
+          "minimal"
+        ],
+        "keywords": [
+          "portrait",
+          "outdoor",
+          "natural light"
+        ]
+      },
+      {
+        "title": "Corporate Shoots Portfolio 4",
+        "tags": [
+          "editorial",
+          "bold"
+        ],
+        "keywords": [
+          "portrait",
+          "motion",
+          "natural light"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tal_002",
+    "name": "Rachel Powell",
+    "city": "Chennai",
+    "hometown": "Mumbai",
+    "categories": [
+      "Photographer",
+      "Director"
+    ],
+    "skills": [
+      "Weddings",
+      "Fashion Shoots",
+      "Corporate Shoots"
+    ],
+    "style_tags": [
+      "classic",
+      "vibrant",
+      "minimal"
+    ],
+    "budget_range": "\u20b912847\u2013\u20b9156973",
+    "experience_years": 6,
+    "platforms": [
+      "Behance",
+      "Google Drive",
+      "Instagram"
+    ],
+    "soft_skills": {
+      "communication": "good",
+      "punctuality": "good",
+      "collaboration": "average",
+      "initiative": "good",
+      "adaptability": "good"
+    },
+    "software_skills": {
+      "ChatGPT": 8,
+      "SEO": 4,
+      "Adobe Photoshop": 10,
+      "Lightroom": 3
+    },
+    "languages": [
+      "Tamil",
+      "Hindi"
+    ],
+    "past_credits": [
+      "Murillo-Joseph"
+    ]
+  }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
