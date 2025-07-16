@@ -58,11 +58,30 @@ app.post('/api/match', (req, res) => {
   if (!talentProfiles.length) {
     return res.status(500).json({ error: 'Talent profiles data not available.' });
   }
+  
   // Filter for remote creators if requested
   let filteredProfiles = talentProfiles;
   if (brief.remoteOnly) {
-    filteredProfiles = talentProfiles.filter(c => c.remote === true);
+    // Check if creator can work remotely based on availability_calendar or other indicators
+    filteredProfiles = talentProfiles.filter(creator => {
+      // Check if they have remote availability in their calendar
+      if (creator.availability_calendar) {
+        return creator.availability_calendar.some(availability => 
+          availability.city.toLowerCase() === 'remote' || 
+          availability.city.toLowerCase() === 'anywhere' ||
+          availability.city.toLowerCase() === 'online'
+        );
+      }
+      // If no availability calendar, assume they can work remotely if they have online platforms
+      if (creator.platforms) {
+        const onlinePlatforms = ['Personal Website', 'Instagram', 'Behance', 'Google Drive'];
+        return creator.platforms.some(platform => onlinePlatforms.includes(platform));
+      }
+      // Default to true if we can't determine (to avoid filtering out too many profiles)
+      return true;
+    });
   }
+  
   // Use refactored logic to get top matches
   const top3 = getTopMatches(filteredProfiles, brief, 3);
   res.json(top3);
