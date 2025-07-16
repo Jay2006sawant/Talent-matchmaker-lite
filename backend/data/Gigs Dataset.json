@@ -1,16 +1,90 @@
 [
   {
-    "id": 1,
-    "location": "Goa",
-    "skills_required": ["portrait", "pastel"],
-    "budget": 75000,
-    "style_preferences": ["candid"]
+    "id": "gig_001",
+    "title": "Direction project for Taylor, Stewart and Cooper",
+    "brief_text": "Would door upon small adult few mother. Show clear politics page apply. Authority thing force usually measure boy.",
+    "category": "Photography",
+    "city": "Bangalore",
+    "budget": 104224,
+    "client_id": "cli_041",
+    "style_tags": [
+      "vibrant",
+      "classic",
+      "minimal"
+    ],
+    "expectation_level": "intermediate",
+    "status": "confirmed",
+    "start_date": "2025-09-01",
+    "has_docs": false,
+    "docs_type": null,
+    "is_date_fixed": false,
+    "references_given": true,
+    "urgency": "ASAP"
   },
   {
-    "id": 2,
-    "location": "Mumbai",
-    "skills_required": ["fashion", "editorial"],
-    "budget": 120000,
-    "style_preferences": ["studio"]
+    "id": "gig_002",
+    "title": "Branding project for Caldwell-Gallagher",
+    "brief_text": "Student small increase sit. Set none analysis beat fast able drop. Road group act high after skill wind.",
+    "category": "Content Writing",
+    "city": "Delhi",
+    "budget": 109934,
+    "client_id": "cli_043",
+    "style_tags": [
+      "classic",
+      "cinematic",
+      "editorial"
+    ],
+    "expectation_level": "pro",
+    "status": "confirmed",
+    "start_date": "2025-08-15",
+    "has_docs": false,
+    "docs_type": null,
+    "is_date_fixed": false,
+    "references_given": false,
+    "urgency": "flexible"
+  },
+  {
+    "id": "gig_003",
+    "title": "Branding project for Phillips, Schroeder and Grimes",
+    "brief_text": "True own lose start increase step. Lose more choice away would.",
+    "category": "Direction",
+    "city": "Hyderabad",
+    "budget": "To be discussed",
+    "client_id": "cli_023",
+    "style_tags": [
+      "vibrant",
+      "bold",
+      "editorial"
+    ],
+    "expectation_level": "basic",
+    "status": "shortlist shared",
+    "start_date": "2025-07-27",
+    "has_docs": true,
+    "docs_type": "Google Doc",
+    "is_date_fixed": false,
+    "references_given": true,
+    "urgency": "flexible"
+  },
+  {
+    "id": "gig_060",
+    "title": "Photography project for Rodriguez, Hunter and Compton",
+    "brief_text": "Pm quite no away certain. Box TV worry far short civil popular.",
+    "category": "Video Editing",
+    "city": "Goa",
+    "budget": "To be discussed",
+    "client_id": "cli_019",
+    "style_tags": [
+      "documentary",
+      "bold",
+      "minimal"
+    ],
+    "expectation_level": "pro",
+    "status": "final discussions",
+    "start_date": "2025-08-17",
+    "has_docs": false,
+    "docs_type": null,
+    "is_date_fixed": false,
+    "references_given": true,
+    "urgency": "ASAP"
   }
 ] 

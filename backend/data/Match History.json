@@ -88,5 +88,15 @@
     "creatorId": 3,
     "feedback": "up",
     "timestamp": "2025-07-15T17:44:22.539Z"
+  },
+  {
+    "creatorId": 1,
+    "feedback": "up",
+    "timestamp": "2025-07-16T01:53:19.484Z"
+  },
+  {
+    "creatorId": 1,
+    "feedback": "down",
+    "timestamp": "2025-07-16T01:53:23.333Z"
   }
 ]
