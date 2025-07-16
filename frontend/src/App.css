@@ -134,6 +134,15 @@ input:focus, select:focus, button:focus {
   .MatchResultCard {
     padding: 8px;
     margin: 8px 0;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .card-body.d-flex {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .card-title, .card-subtitle, .card-text, .btn, .badge {
+    font-size: 1rem !important;
   }
   h1 {
     font-size: 1.5rem;
@@ -143,5 +152,28 @@ input:focus, select:focus, button:focus {
   }
   label, input, select, button {
     font-size: 1rem;
+  }
+  .me-4 {
+    margin-right: 0 !important;
+    margin-bottom: 12px !important;
+  }
+  .btn, .btn-sm {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  .toast {
+    min-width: 90vw !important;
+    left: 5vw !important;
+    right: 5vw !important;
+    top: 12px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .card-title, .card-subtitle, .card-text, .btn, .badge {
+    font-size: 0.95rem !important;
+  }
+  h1 {
+    font-size: 1.1rem;
   }
 }
