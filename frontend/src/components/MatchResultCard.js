@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function getInitials(name) {
   return name
@@ -9,64 +9,85 @@ function getInitials(name) {
 }
 
 export default function MatchResultCard({ creator, onFeedback, previousFeedback }) {
+  const [showPortfolio, setShowPortfolio] = useState(false);
+
+  const handlePortfolioClick = () => {
+    if (creator.portfolio && creator.portfolio.length > 0) {
+      setShowPortfolio(!showPortfolio);
+    }
+  };
+
   return (
-    <div className="card shadow-lg mb-4 MatchResultCard" style={{ fontFamily: 'Montserrat, Arial, sans-serif', border: 'none' }}>
-      <div className="card-body d-flex align-items-center">
-        <div className="me-4 d-flex flex-column align-items-center">
-          <div style={{
-            width: 56,
-            height: 56,
-            borderRadius: '50%',
-            background: 'linear-gradient(135deg, #6EE7B7 0%, #3B82F6 100%)',
-            color: '#fff',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontWeight: 700,
-            fontSize: 24,
-            boxShadow: '0 2px 8px rgba(59,130,246,0.15)'
-          }}>
-            {getInitials(creator.name)}
-          </div>
-          {creator.remote && (
-            <span className="badge bg-success mt-2">Remote</span>
-          )}
+    <div className="match-card">
+      <div className="d-flex align-items-center">
+        <div className="avatar">
+          {getInitials(creator.name)}
         </div>
-        <div className="flex-grow-1">
-          <div className="d-flex align-items-center mb-1">
-            <h5 className="card-title mb-0 me-2" style={{ fontWeight: 700 }}>{creator.name}</h5>
-            <span className="badge bg-primary" style={{ fontSize: '1rem', fontWeight: 600 }}>Score: {creator.score}</span>
+        
+        <div className="match-info">
+          <div className="d-flex align-items-center">
+            <h5 className="match-name mb-0">{creator.name}</h5>
+            <span className="match-score">Score: {creator.score}</span>
           </div>
-          <h6 className="card-subtitle mb-2 text-primary" style={{ fontWeight: 600 }}>Reason:</h6>
-          <p className="card-text mb-2" style={{ fontSize: '1.05rem' }}>{creator.rationale}</p>
-          {creator.portfolio && (
-            <a href={creator.portfolio} target="_blank" rel="noopener noreferrer" className="btn btn-outline-secondary btn-sm me-2">Portfolio</a>
+          
+          <p className="match-reason mb-3">{creator.rationale}</p>
+          
+          {/* Portfolio Button */}
+          {creator.portfolio && creator.portfolio.length > 0 && (
+            <button 
+              onClick={handlePortfolioClick}
+              className="btn btn-outline btn-sm"
+            >
+              Portfolio ({creator.portfolio.length} items)
+            </button>
           )}
+          
           {previousFeedback && (
-            <span className="badge bg-info text-dark ms-1">Previous feedback: {previousFeedback === 'up' ? '👍' : '👎'}</span>
+            <span className="badge badge-info ms-2">
+              Previous feedback: {previousFeedback === 'up' ? '👍' : '👎'}
+            </span>
           )}
-          <div className="mt-3">
+          
+          {/* Portfolio Details */}
+          {showPortfolio && creator.portfolio && (
+            <div className="portfolio-section">
+              <h6 className="mb-3">Portfolio Items:</h6>
+              {creator.portfolio.map((item, index) => (
+                <div key={index} className="portfolio-item">
+                  <div className="portfolio-title">{item.title}</div>
+                  {item.tags && item.tags.length > 0 && (
+                    <div className="portfolio-tags">
+                      Tags: {item.tags.join(', ')}
+                    </div>
+                  )}
+                  {item.keywords && item.keywords.length > 0 && (
+                    <div className="portfolio-tags">
+                      Keywords: {item.keywords.join(', ')}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+          
+          <div className="feedback-buttons">
             <button
               type="button"
-              className="btn btn-success btn-sm me-2"
+              className="feedback-btn up"
               title="Thumbs Up"
               aria-label={`Give thumbs up feedback for ${creator.name}`}
-              tabIndex={0}
               onClick={() => onFeedback && onFeedback(creator.id, 'up')}
-              onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') onFeedback && onFeedback(creator.id, 'up'); }}
             >
-              <span role="img" aria-label="Thumbs Up">👍</span>
+              👍
             </button>
             <button
               type="button"
-              className="btn btn-danger btn-sm"
+              className="feedback-btn down"
               title="Thumbs Down"
               aria-label={`Give thumbs down feedback for ${creator.name}`}
-              tabIndex={0}
               onClick={() => onFeedback && onFeedback(creator.id, 'down')}
-              onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') onFeedback && onFeedback(creator.id, 'down'); }}
             >
-              <span role="img" aria-label="Thumbs Down">👎</span>
+              👎
             </button>
           </div>
         </div>

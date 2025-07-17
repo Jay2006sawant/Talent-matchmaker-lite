@@ -50,82 +50,106 @@ export default function ClientBriefForm({ onSubmit, onFormChange }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="p-4 bg-white rounded shadow-sm mb-4" style={{ maxWidth: 500, margin: '0 auto', fontFamily: 'Montserrat, Arial, sans-serif' }}>
-      <h2 className="mb-3 fw-bold" style={{ fontFamily: 'Montserrat, Arial, sans-serif' }}>Client Brief</h2>
-      {validationMsg && <div className="alert alert-danger py-1 mb-2">{validationMsg}</div>}
-      <div className="form-floating mb-3">
-        <select name="location" value={form.location} onChange={handleChange} required className="form-select" id="locationSelect">
-          <option value="">Select</option>
-          {locations.map(loc => <option key={loc} value={loc}>{loc}</option>)}
-        </select>
-        <label htmlFor="locationSelect">Location</label>
-        <div className="form-text">Where is your project based?</div>
-      </div>
-      <div className="mb-3">
-        <label className="form-label fw-semibold">Skills Required</label>
-        <div className="d-flex flex-wrap gap-2">
-          {skillsList.map(skill => (
-            <div className="form-check me-2" key={skill}>
-              <input
-                className="form-check-input"
-                type="checkbox"
-                checked={form.skills_required.includes(skill)}
-                onChange={() => handleMultiSelect('skills_required', skill)}
-                id={`skill-${skill}`}
-              />
-              <label className="form-check-label" htmlFor={`skill-${skill}`}>{skill}</label>
-            </div>
-          ))}
+    <div className="form-container fade-in-up">
+      <form onSubmit={handleSubmit}>
+        <div className="text-center mb-4">
+          <h2>Project Brief</h2>
+          <p className="text-secondary">Tell us about your project requirements</p>
         </div>
-        <div className="form-text">Select all that apply.</div>
-      </div>
-      <div className="form-floating mb-3">
-        <input
-          type="number"
-          name="budget"
-          value={form.budget}
-          onChange={handleChange}
-          required
-          className="form-control"
-          id="budgetInput"
-          placeholder="Budget"
-        />
-        <label htmlFor="budgetInput">Budget</label>
-        <div className="form-text">Enter your budget in INR (e.g., 75000).</div>
-      </div>
-      <div className="mb-3">
-        <label className="form-label fw-semibold">Style Preferences</label>
-        <div className="d-flex flex-wrap gap-2">
-          {styleList.map(style => (
-            <div className="form-check me-2" key={style}>
-              <input
-                className="form-check-input"
-                type="checkbox"
-                checked={form.style_preferences.includes(style)}
-                onChange={() => handleMultiSelect('style_preferences', style)}
-                id={`style-${style}`}
-              />
-              <label className="form-check-label" htmlFor={`style-${style}`}>{style}</label>
+        
+        {validationMsg && (
+          <div className="card mb-3" style={{ background: 'rgba(239, 68, 68, 0.1)', borderColor: 'rgba(239, 68, 68, 0.3)' }}>
+            <div className="text-center text-secondary">
+              <p>{validationMsg}</p>
             </div>
-          ))}
+          </div>
+        )}
+        
+        <div className="form-section">
+          <label className="form-label" htmlFor="locationSelect">Location</label>
+          <select 
+            name="location" 
+            value={form.location} 
+            onChange={handleChange} 
+            required 
+            id="locationSelect"
+            className="form-select"
+          >
+            <option value="">Select a location</option>
+            {locations.map(loc => <option key={loc} value={loc}>{loc}</option>)}
+          </select>
+          <div className="text-secondary mt-1">Where is your project based?</div>
         </div>
-        <div className="form-text">Choose the style(s) you prefer for your project.</div>
-      </div>
-      <div className="mb-3 form-check">
-        <input
-          className="form-check-input"
-          type="checkbox"
-          name="remoteOnly"
-          id="remoteOnly"
-          checked={form.remoteOnly}
-          onChange={handleChange}
-        />
-        <label className="form-check-label" htmlFor="remoteOnly">
-          Remote Only
-        </label>
-        <div className="form-text">Check to include only creators available for remote work.</div>
-      </div>
-      <button type="submit" className="btn btn-primary mt-2 w-100 fw-bold" style={{ fontFamily: 'Montserrat, Arial, sans-serif' }}>Find Matches</button>
-    </form>
+
+        <div className="form-section">
+          <label className="form-label">Skills Required</label>
+          <div className="checkbox-grid">
+            {skillsList.map(skill => (
+              <div className="checkbox-item" key={skill}>
+                <input
+                  type="checkbox"
+                  checked={form.skills_required.includes(skill)}
+                  onChange={() => handleMultiSelect('skills_required', skill)}
+                  id={`skill-${skill}`}
+                />
+                <label htmlFor={`skill-${skill}`} className="mb-0">{skill}</label>
+              </div>
+            ))}
+          </div>
+          <div className="text-secondary mt-1">Select all that apply.</div>
+        </div>
+
+        <div className="form-section">
+          <label className="form-label" htmlFor="budgetInput">Budget</label>
+          <input
+            type="number"
+            name="budget"
+            value={form.budget}
+            onChange={handleChange}
+            required
+            id="budgetInput"
+            placeholder="Enter your budget in INR"
+            className="form-input"
+          />
+          <div className="text-secondary mt-1">Enter your budget in INR (e.g., 75000).</div>
+        </div>
+
+        <div className="form-section">
+          <label className="form-label">Style Preferences</label>
+          <div className="checkbox-grid">
+            {styleList.map(style => (
+              <div className="checkbox-item" key={style}>
+                <input
+                  type="checkbox"
+                  checked={form.style_preferences.includes(style)}
+                  onChange={() => handleMultiSelect('style_preferences', style)}
+                  id={`style-${style}`}
+                />
+                <label htmlFor={`style-${style}`} className="mb-0">{style}</label>
+              </div>
+            ))}
+          </div>
+          <div className="text-secondary mt-1">Choose the style(s) you prefer for your project.</div>
+        </div>
+
+        <div className="form-section">
+          <div className="checkbox-item">
+            <input
+              type="checkbox"
+              name="remoteOnly"
+              id="remoteOnly"
+              checked={form.remoteOnly}
+              onChange={handleChange}
+            />
+            <label htmlFor="remoteOnly" className="mb-0">Remote Only</label>
+          </div>
+          <div className="text-secondary mt-1">Check to include only creators available for remote work.</div>
+        </div>
+
+        <button type="submit" className="btn btn-primary w-100">
+          Find Matches
+        </button>
+      </form>
+    </div>
   );
 } 

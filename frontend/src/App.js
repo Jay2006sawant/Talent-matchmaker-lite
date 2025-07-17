@@ -1,117 +1,218 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ClientBriefForm from './components/ClientBriefForm';
-import LoadingSpinner from './components/LoadingSpinner';
 import MatchResultCard from './components/MatchResultCard';
-
-function Toast({ message, onClose }) {
-  if (!message) return null;
-  return (
-    <div style={{ position: 'fixed', top: 24, right: 24, zIndex: 9999, minWidth: 220 }}>
-      <div className="toast show align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
-        <div className="d-flex">
-          <div className="toast-body">
-            {message}
-          </div>
-          <button type="button" className="btn-close btn-close-white me-2 m-auto" aria-label="Close" onClick={onClose}></button>
-        </div>
-      </div>
-    </div>
-  );
-}
+import './App.css';
 
 function App() {
+  const [currentPage, setCurrentPage] = useState('home'); // 'home', 'form', 'results'
   const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [feedbackMsg, setFeedbackMsg] = useState('');
-  const [feedbackData, setFeedbackData] = useState([]);
 
-  useEffect(() => {
-    document.title = 'Talent Matchmaker Lite';
-  }, []);
-
-  const handleBriefSubmit = async (brief) => {
+  const handleFormSubmit = async (formData) => {
     setLoading(true);
     setError('');
-    setMatches([]);
+    
     try {
-      const res = await fetch('http://localhost:5000/api/match', {
+      const response = await fetch('http://localhost:5000/api/match', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(brief) // brief now includes remoteOnly
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-      if (!res.ok) throw new Error('Failed to fetch matches');
-      const data = await res.json();
-      setMatches(data);
-      // Fetch feedback for these matches
-      const feedbackRes = await fetch('http://localhost:5000/api/feedback');
-      if (feedbackRes.ok) {
-        const feedback = await feedbackRes.json();
-        setFeedbackData(feedback);
-      } else {
-        setFeedbackData([]);
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch matches');
       }
+
+      const data = await response.json();
+      setMatches(data);
+      setCurrentPage('results');
     } catch (err) {
-      setError(err.message || 'Error fetching matches');
+      setError('Failed to fetch matches');
+      console.error('Error:', err);
     } finally {
       setLoading(false);
     }
   };
 
-  // Feedback handler
   const handleFeedback = async (creatorId, feedback) => {
     try {
-      setFeedbackMsg('');
-      const res = await fetch('http://localhost:5000/api/feedback', {
+      await fetch('http://localhost:5000/api/feedback', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ creatorId, feedback })
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ creatorId, feedback }),
       });
-      if (!res.ok) throw new Error('Failed to send feedback');
-      setFeedbackMsg('Thank you for your feedback!');
-      setTimeout(() => setFeedbackMsg(''), 2000);
-      // Refresh feedback data after submitting
-      const feedbackRes = await fetch('http://localhost:5000/api/feedback');
-      if (feedbackRes.ok) {
-        const feedbackArr = await feedbackRes.json();
-        setFeedbackData(feedbackArr);
-      }
     } catch (err) {
-      setFeedbackMsg('Error sending feedback.');
-      setTimeout(() => setFeedbackMsg(''), 2000);
+      console.error('Error sending feedback:', err);
     }
   };
 
-  // Clear matches when form changes
   const handleFormChange = () => {
-    setMatches([]);
-    setError('');
-    setFeedbackData([]);
+    if (error) setError('');
   };
 
-  return (
-    <div className="container py-4">
-      <Toast message={feedbackMsg} onClose={() => setFeedbackMsg('')} />
-      <h1 className="text-center mb-4">Talent Matchmaker Lite</h1>
-      <ClientBriefForm onSubmit={handleBriefSubmit} onFormChange={handleFormChange} />
-      {loading && <LoadingSpinner />}
-      {error && <p className="alert alert-danger text-center">{error}</p>}
-      {!loading && !error && matches && matches.length === 0 && (
-        <p className="text-secondary text-center mt-4">No matches found. Please try different criteria.</p>
-      )}
-      {matches.length > 0 && (
-        <div>
-          <h2 className="mb-3">Top Matches</h2>
-          {matches.map(creator => {
-            // Find the most recent feedback for this creator (compare as strings)
-            const creatorFeedback = feedbackData.filter(f => String(f.creatorId) === String(creator.id));
-            const lastFeedback = creatorFeedback.length > 0 ? creatorFeedback[creatorFeedback.length - 1].feedback : null;
-            return (
-              <MatchResultCard key={creator.id} creator={creator} onFeedback={handleFeedback} previousFeedback={lastFeedback} />
-            );
-          })}
+  const navigateToForm = () => {
+    setCurrentPage('form');
+    setMatches([]);
+    setError('');
+  };
+
+  const navigateToHome = () => {
+    setCurrentPage('home');
+    setMatches([]);
+    setError('');
+  };
+
+  // Home Page Component
+  const HomePage = () => (
+    <div className="page-transition">
+      {/* Hero Section */}
+      <section className="hero">
+        <div className="hero-content fade-in-up">
+          <h1 className="hero-title">Find the Best Creative Talent</h1>
+          <p className="hero-subtitle">
+            Connect with photographers, videographers, and creative professionals for your next project. 
+            Get matched with the perfect talent based on your specific requirements.
+          </p>
+          <div className="d-flex gap-3 justify-content-center">
+            <button className="btn btn-primary" onClick={navigateToForm}>
+              Start Matching
+            </button>
+            <button className="btn btn-outline">Learn More</button>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="container mt-4">
+        <div className="text-center mb-4">
+          <h2 className="fade-in-up">Why Choose Talent Matchmaker?</h2>
+          <p className="text-secondary">Advanced AI-powered matching for your creative projects</p>
+        </div>
+        
+        <div className="features-grid">
+          <div className="feature-card fade-in-up">
+            <div className="feature-icon">🎯</div>
+            <h3>Smart Matching</h3>
+            <p className="text-secondary">Our AI analyzes your requirements and finds the perfect talent match.</p>
+          </div>
+          
+          <div className="feature-card fade-in-up">
+            <div className="feature-icon">✅</div>
+            <h3>Verified Talent</h3>
+            <p className="text-secondary">All creators are vetted and have proven track records.</p>
+          </div>
+          
+          <div className="feature-card fade-in-up">
+            <div className="feature-icon">⚡</div>
+            <h3>Quick Results</h3>
+            <p className="text-secondary">Get matched with top talent in seconds, not days.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+
+  // Form Page Component
+  const FormPage = () => (
+    <main className="container page-transition">
+      <div className="form-page-header">
+        <button className="btn btn-back mb-3" onClick={navigateToHome}>
+          ← Back to Home
+        </button>
+        <h1 className="form-page-title">Project Brief</h1>
+        <p className="form-page-subtitle">Tell us about your project to find the perfect match</p>
+      </div>
+      
+      <ClientBriefForm onSubmit={handleFormSubmit} onFormChange={handleFormChange} />
+    </main>
+  );
+
+  // Results Page Component
+  const ResultsPage = () => (
+    <main className="container page-transition">
+      <div className="results-header">
+        <div className="nav-buttons">
+          <button className="btn btn-back" onClick={navigateToHome}>
+            ← Back to Home
+          </button>
+          <button className="btn btn-back" onClick={navigateToForm}>
+            New Search
+          </button>
+        </div>
+        <h1 className="results-title">Your Matches</h1>
+        <p className="results-subtitle">We found {matches.length} perfect matches for your project</p>
+      </div>
+
+      {loading && (
+        <div className="loading-spinner">
+          <div className="spinner"></div>
         </div>
       )}
+
+      {error && (
+        <div className="card slide-in-left">
+          <div className="text-center text-secondary">
+            <p>{error}</p>
+          </div>
+        </div>
+      )}
+
+      {matches.length > 0 && (
+        <div className="fade-in-up">
+          {matches.map((creator, index) => (
+            <MatchResultCard
+              key={creator.id}
+              creator={creator}
+              onFeedback={handleFeedback}
+            />
+          ))}
+        </div>
+      )}
+
+      {!loading && !error && matches.length === 0 && (
+        <div className="card slide-in-left">
+          <div className="text-center text-secondary">
+            <p>No matches found. Try adjusting your criteria.</p>
+          </div>
+        </div>
+      )}
+    </main>
+  );
+
+  return (
+    <div className="App">
+      {/* Fixed Header */}
+      <header className="header">
+        <div className="container">
+          <div className="header-content">
+            <div className="logo" onClick={navigateToHome} style={{ cursor: 'pointer' }}>
+              Talent Matchmaker
+            </div>
+            <div className="d-flex gap-3">
+              <button className="btn btn-outline btn-sm">Browse Talent</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Page Content */}
+      {currentPage === 'home' && <HomePage />}
+      {currentPage === 'form' && <FormPage />}
+      {currentPage === 'results' && <ResultsPage />}
+
+      {/* Footer */}
+      <footer className="mt-4 mb-4">
+        <div className="container">
+          <div className="text-center text-secondary">
+            <p>&copy; 2024 Talent Matchmaker. Built with ❤️ for creative professionals.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

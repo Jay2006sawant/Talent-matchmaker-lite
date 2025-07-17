@@ -3,8 +3,8 @@
     "gig_id": "gig_001",
     "talent_id": "tal_144",
     "status": "shortlisted",
-    "score": 7.0,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "score": 7,
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": null,
     "shared_on": "2025-06-02",
     "final_decision": "undecided"
@@ -24,7 +24,7 @@
     "talent_id": "tal_067",
     "status": "selected",
     "score": 8.9,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": "Would love to work with them again.",
     "shared_on": "2025-06-11",
     "final_decision": "selected"
@@ -64,7 +64,7 @@
     "talent_id": "tal_161",
     "status": "backup",
     "score": null,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": null,
     "shared_on": "2025-06-05",
     "final_decision": "undecided"
@@ -84,7 +84,7 @@
     "talent_id": "tal_076",
     "status": "selected",
     "score": 9.4,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": "Not enough brief details provided.",
     "shared_on": "2025-06-03",
     "final_decision": "selected"
@@ -93,7 +93,7 @@
     "gig_id": "gig_003",
     "talent_id": "tal_098",
     "status": "shortlisted",
-    "score": 7.0,
+    "score": 7,
     "feedback_from_client": "Responsive and professional.",
     "feedback_from_talent": null,
     "shared_on": "2025-06-08",
@@ -153,8 +153,8 @@
     "gig_id": "gig_004",
     "talent_id": "tal_122",
     "status": "selected",
-    "score": 7.0,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "score": 7,
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": "Would love to work with them again.",
     "shared_on": "2025-05-22",
     "final_decision": "selected"
@@ -194,7 +194,7 @@
     "talent_id": "tal_164",
     "status": "selected",
     "score": 8.2,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": "Payment discussion unclear.",
     "shared_on": "2025-06-05",
     "final_decision": "selected"
@@ -214,7 +214,7 @@
     "talent_id": "tal_019",
     "status": "selected",
     "score": 9.1,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": "Delayed response from client.",
     "shared_on": "2025-06-22",
     "final_decision": "selected"
@@ -244,7 +244,7 @@
     "talent_id": "tal_084",
     "status": "selected",
     "score": 7.1,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": "Would love to work with them again.",
     "shared_on": "2025-06-10",
     "final_decision": "selected"
@@ -334,7 +334,7 @@
     "talent_id": "tal_096",
     "status": "shortlisted",
     "score": 8.7,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": null,
     "shared_on": "2025-06-23",
     "final_decision": "undecided"
@@ -354,7 +354,7 @@
     "talent_id": "tal_048",
     "status": "selected",
     "score": 8.4,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": "Payment discussion unclear.",
     "shared_on": "2025-05-28",
     "final_decision": "selected"
@@ -384,7 +384,7 @@
     "talent_id": "tal_123",
     "status": "shortlisted",
     "score": 7.6,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": null,
     "shared_on": "2025-05-16",
     "final_decision": "undecided"
@@ -423,7 +423,7 @@
     "gig_id": "gig_012",
     "talent_id": "tal_155",
     "status": "shortlisted",
-    "score": 6.0,
+    "score": 6,
     "feedback_from_client": "Excellent communication and follow-up.",
     "feedback_from_talent": null,
     "shared_on": "2025-06-17",
@@ -434,7 +434,7 @@
     "talent_id": "tal_025",
     "status": "selected",
     "score": 8.7,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": "Not enough brief details provided.",
     "shared_on": "2025-06-25",
     "final_decision": "selected"
@@ -504,7 +504,7 @@
     "talent_id": "tal_157",
     "status": "backup",
     "score": null,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": null,
     "shared_on": "2025-06-24",
     "final_decision": "undecided"
@@ -704,7 +704,7 @@
     "talent_id": "tal_002",
     "status": "selected",
     "score": 6.2,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": "Client was clear and collaborative.",
     "shared_on": "2025-06-20",
     "final_decision": "selected"
@@ -724,7 +724,7 @@
     "talent_id": "tal_020",
     "status": "selected",
     "score": 9.3,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": "Payment discussion unclear.",
     "shared_on": "2025-05-15",
     "final_decision": "selected"
@@ -734,7 +734,7 @@
     "talent_id": "tal_169",
     "status": "shortlisted",
     "score": 6.2,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": null,
     "shared_on": "2025-05-15",
     "final_decision": "undecided"
@@ -743,7 +743,7 @@
     "gig_id": "gig_023",
     "talent_id": "tal_136",
     "status": "selected",
-    "score": 8.0,
+    "score": 8,
     "feedback_from_client": "Worked well, on-time delivery.",
     "feedback_from_talent": "Would love to work with them again.",
     "shared_on": "2025-06-25",
@@ -754,7 +754,7 @@
     "talent_id": "tal_195",
     "status": "backup",
     "score": null,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": null,
     "shared_on": "2025-06-16",
     "final_decision": "undecided"
@@ -774,7 +774,7 @@
     "talent_id": "tal_010",
     "status": "backup",
     "score": null,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": null,
     "shared_on": "2025-06-12",
     "final_decision": "undecided"
@@ -794,7 +794,7 @@
     "talent_id": "tal_083",
     "status": "selected",
     "score": 9.4,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": "Last-minute change in scope.",
     "shared_on": "2025-06-16",
     "final_decision": "selected"
@@ -833,7 +833,7 @@
     "gig_id": "gig_025",
     "talent_id": "tal_125",
     "status": "shortlisted",
-    "score": 7.0,
+    "score": 7,
     "feedback_from_client": "Excellent communication and follow-up.",
     "feedback_from_talent": null,
     "shared_on": "2025-05-20",
@@ -894,7 +894,7 @@
     "talent_id": "tal_200",
     "status": "shortlisted",
     "score": 9.3,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": null,
     "shared_on": "2025-06-28",
     "final_decision": "undecided"
@@ -1034,7 +1034,7 @@
     "talent_id": "tal_151",
     "status": "shortlisted",
     "score": 6.7,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": null,
     "shared_on": "2025-05-20",
     "final_decision": "undecided"
@@ -1043,7 +1043,7 @@
     "gig_id": "gig_031",
     "talent_id": "tal_196",
     "status": "shortlisted",
-    "score": 8.0,
+    "score": 8,
     "feedback_from_client": "Worked well, on-time delivery.",
     "feedback_from_talent": null,
     "shared_on": "2025-05-26",
@@ -1054,7 +1054,7 @@
     "talent_id": "tal_190",
     "status": "selected",
     "score": 6.5,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": "Would love to work with them again.",
     "shared_on": "2025-05-23",
     "final_decision": "selected"
@@ -1063,8 +1063,8 @@
     "gig_id": "gig_032",
     "talent_id": "tal_164",
     "status": "selected",
-    "score": 8.0,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "score": 8,
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": "Not enough brief details provided.",
     "shared_on": "2025-06-26",
     "final_decision": "selected"
@@ -1073,7 +1073,7 @@
     "gig_id": "gig_032",
     "talent_id": "tal_055",
     "status": "shortlisted",
-    "score": 8.0,
+    "score": 8,
     "feedback_from_client": "Worked well, on-time delivery.",
     "feedback_from_talent": null,
     "shared_on": "2025-05-30",
@@ -1093,7 +1093,7 @@
     "gig_id": "gig_032",
     "talent_id": "tal_036",
     "status": "shortlisted",
-    "score": 9.0,
+    "score": 9,
     "feedback_from_client": "Budget mismatch.",
     "feedback_from_talent": null,
     "shared_on": "2025-05-22",
@@ -1134,7 +1134,7 @@
     "talent_id": "tal_183",
     "status": "shortlisted",
     "score": 7.7,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": null,
     "shared_on": "2025-05-25",
     "final_decision": "undecided"
@@ -1314,7 +1314,7 @@
     "talent_id": "tal_019",
     "status": "selected",
     "score": 8.1,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": "Payment discussion unclear.",
     "shared_on": "2025-06-27",
     "final_decision": "selected"
@@ -1333,7 +1333,7 @@
     "gig_id": "gig_040",
     "talent_id": "tal_109",
     "status": "shortlisted",
-    "score": 7.0,
+    "score": 7,
     "feedback_from_client": "Strong portfolio, but not available on date.",
     "feedback_from_talent": null,
     "shared_on": "2025-06-22",
@@ -1343,7 +1343,7 @@
     "gig_id": "gig_040",
     "talent_id": "tal_132",
     "status": "selected",
-    "score": 7.0,
+    "score": 7,
     "feedback_from_client": "Worked well, on-time delivery.",
     "feedback_from_talent": "Client was clear and collaborative.",
     "shared_on": "2025-06-26",
@@ -1404,7 +1404,7 @@
     "talent_id": "tal_003",
     "status": "selected",
     "score": 7.5,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": "Would love to work with them again.",
     "shared_on": "2025-06-17",
     "final_decision": "selected"
@@ -1424,7 +1424,7 @@
     "talent_id": "tal_122",
     "status": "selected",
     "score": 9.7,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": "Payment discussion unclear.",
     "shared_on": "2025-07-05",
     "final_decision": "selected"
@@ -1514,7 +1514,7 @@
     "talent_id": "tal_151",
     "status": "selected",
     "score": 8.8,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": "Not enough brief details provided.",
     "shared_on": "2025-05-26",
     "final_decision": "selected"
@@ -1664,7 +1664,7 @@
     "talent_id": "tal_070",
     "status": "selected",
     "score": 9.6,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": "Delayed response from client.",
     "shared_on": "2025-05-31",
     "final_decision": "selected"
@@ -1674,7 +1674,7 @@
     "talent_id": "tal_018",
     "status": "shortlisted",
     "score": 7.3,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": null,
     "shared_on": "2025-06-23",
     "final_decision": "undecided"
@@ -1694,7 +1694,7 @@
     "talent_id": "tal_037",
     "status": "backup",
     "score": null,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": null,
     "shared_on": "2025-05-18",
     "final_decision": "undecided"
@@ -1704,7 +1704,7 @@
     "talent_id": "tal_137",
     "status": "selected",
     "score": 8.4,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": "Would love to work with them again.",
     "shared_on": "2025-06-21",
     "final_decision": "selected"
@@ -1753,7 +1753,7 @@
     "gig_id": "gig_053",
     "talent_id": "tal_092",
     "status": "shortlisted",
-    "score": 6.0,
+    "score": 6,
     "feedback_from_client": "Budget mismatch.",
     "feedback_from_talent": null,
     "shared_on": "2025-05-16",
@@ -1854,7 +1854,7 @@
     "talent_id": "tal_169",
     "status": "shortlisted",
     "score": 6.6,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": null,
     "shared_on": "2025-06-02",
     "final_decision": "undecided"
@@ -1884,7 +1884,7 @@
     "talent_id": "tal_183",
     "status": "selected",
     "score": 7.6,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": "Not enough brief details provided.",
     "shared_on": "2025-05-15",
     "final_decision": "selected"
@@ -1964,7 +1964,7 @@
     "talent_id": "tal_184",
     "status": "selected",
     "score": 8.5,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": "Payment discussion unclear.",
     "shared_on": "2025-06-25",
     "final_decision": "selected"
@@ -1974,7 +1974,7 @@
     "talent_id": "tal_010",
     "status": "backup",
     "score": null,
-    "feedback_from_client": "Didn\u2019t align with our aesthetic.",
+    "feedback_from_client": "Didn’t align with our aesthetic.",
     "feedback_from_talent": null,
     "shared_on": "2025-05-23",
     "final_decision": "undecided"
@@ -2003,7 +2003,7 @@
     "gig_id": "gig_060",
     "talent_id": "tal_188",
     "status": "shortlisted",
-    "score": 6.0,
+    "score": 6,
     "feedback_from_client": "Worked well, on-time delivery.",
     "feedback_from_talent": null,
     "shared_on": "2025-06-21",
@@ -2018,5 +2018,45 @@
     "feedback_from_talent": "Payment discussion unclear.",
     "shared_on": "2025-06-19",
     "final_decision": "selected"
+  },
+  {
+    "creatorId": "tal_004",
+    "feedback": "up",
+    "timestamp": "2025-07-30T11:14:16.901Z"
+  },
+  {
+    "creatorId": "tal_003",
+    "feedback": "down",
+    "timestamp": "2025-07-30T11:14:22.150Z"
+  },
+  {
+    "creatorId": "tal_003",
+    "feedback": "down",
+    "timestamp": "2025-07-30T11:14:23.493Z"
+  },
+  {
+    "creatorId": "tal_003",
+    "feedback": "up",
+    "timestamp": "2025-07-30T11:14:24.704Z"
+  },
+  {
+    "creatorId": "tal_003",
+    "feedback": "up",
+    "timestamp": "2025-07-30T11:14:25.355Z"
+  },
+  {
+    "creatorId": "tal_003",
+    "feedback": "up",
+    "timestamp": "2025-07-30T11:14:26.057Z"
+  },
+  {
+    "creatorId": "tal_003",
+    "feedback": "up",
+    "timestamp": "2025-07-30T11:14:26.393Z"
+  },
+  {
+    "creatorId": "tal_014",
+    "feedback": "up",
+    "timestamp": "2025-07-30T11:14:29.327Z"
   }
 ]
