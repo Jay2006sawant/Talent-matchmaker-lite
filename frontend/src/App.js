@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ClientBriefForm from './components/ClientBriefForm';
 import MatchResultCard from './components/MatchResultCard';
 import './App.css';
@@ -8,6 +8,37 @@ function App() {
   const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+
+  // Handle browser back/forward buttons
+  useEffect(() => {
+    const handlePopState = () => {
+      const path = window.location.pathname;
+      if (path === '/form') {
+        setCurrentPage('form');
+      } else if (path === '/results') {
+        setCurrentPage('results');
+      } else {
+        setCurrentPage('home');
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  const navigateToForm = () => {
+    setCurrentPage('form');
+    setMatches([]);
+    setError('');
+    window.history.pushState({}, '', '/form');
+  };
+
+  const navigateToHome = () => {
+    setCurrentPage('home');
+    setMatches([]);
+    setError('');
+    window.history.pushState({}, '', '/');
+  };
 
   const handleFormSubmit = async (formData) => {
     setLoading(true);
@@ -29,6 +60,7 @@ function App() {
       const data = await response.json();
       setMatches(data);
       setCurrentPage('results');
+      window.history.pushState({}, '', '/results');
     } catch (err) {
       setError('Failed to fetch matches');
       console.error('Error:', err);
@@ -55,25 +87,13 @@ function App() {
     if (error) setError('');
   };
 
-  const navigateToForm = () => {
-    setCurrentPage('form');
-    setMatches([]);
-    setError('');
-  };
-
-  const navigateToHome = () => {
-    setCurrentPage('home');
-    setMatches([]);
-    setError('');
-  };
-
   // Home Page Component
   const HomePage = () => (
     <div className="page-transition">
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content fade-in-up">
-          <h1 className="hero-title">Find the Best Creative Talent</h1>
+          <h1 className="hero-title">Find the Perfect Creative Talent</h1>
           <p className="hero-subtitle">
             Connect with photographers, videographers, and creative professionals for your next project. 
             Get matched with the perfect talent based on your specific requirements.
@@ -86,6 +106,9 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Wave Divider */}
+      <div className="wave-divider"></div>
 
       {/* Features Section */}
       <section className="container mt-4">
@@ -114,6 +137,9 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Wave Divider */}
+      <div className="wave-divider"></div>
     </div>
   );
 

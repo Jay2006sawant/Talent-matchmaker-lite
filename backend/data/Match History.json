@@ -2058,5 +2058,90 @@
     "creatorId": "tal_014",
     "feedback": "up",
     "timestamp": "2025-07-30T11:14:29.327Z"
+  },
+  {
+    "creatorId": "tal_013",
+    "feedback": "up",
+    "timestamp": "2025-07-30T17:21:24.271Z"
+  },
+  {
+    "creatorId": "tal_013",
+    "feedback": "up",
+    "timestamp": "2025-07-30T17:21:25.202Z"
+  },
+  {
+    "creatorId": "tal_013",
+    "feedback": "up",
+    "timestamp": "2025-07-30T17:21:25.723Z"
+  },
+  {
+    "creatorId": "tal_007",
+    "feedback": "down",
+    "timestamp": "2025-07-30T17:21:27.776Z"
+  },
+  {
+    "creatorId": "tal_004",
+    "feedback": "up",
+    "timestamp": "2025-07-30T17:44:01.183Z"
+  },
+  {
+    "creatorId": "tal_004",
+    "feedback": "up",
+    "timestamp": "2025-07-30T17:44:03.156Z"
+  },
+  {
+    "creatorId": "tal_003",
+    "feedback": "down",
+    "timestamp": "2025-07-30T17:44:05.521Z"
+  },
+  {
+    "creatorId": "tal_003",
+    "feedback": "up",
+    "timestamp": "2025-07-30T17:44:07.872Z"
+  },
+  {
+    "creatorId": "tal_003",
+    "feedback": "up",
+    "timestamp": "2025-07-30T17:44:10.374Z"
+  },
+  {
+    "creatorId": "tal_013",
+    "feedback": "up",
+    "timestamp": "2025-07-31T02:01:08.255Z"
+  },
+  {
+    "creatorId": "tal_013",
+    "feedback": "up",
+    "timestamp": "2025-07-31T02:01:09.357Z"
+  },
+  {
+    "creatorId": "tal_007",
+    "feedback": "up",
+    "timestamp": "2025-07-31T02:01:12.498Z"
+  },
+  {
+    "creatorId": "tal_007",
+    "feedback": "down",
+    "timestamp": "2025-07-31T02:01:15.264Z"
+  },
+  {
+    "creatorId": "tal_007",
+    "feedback": "down",
+    "timestamp": "2025-07-31T02:01:16.156Z"
+  },
+  {
+    "creatorId": "tal_024",
+    "feedback": "up",
+    "timestamp": "2025-07-31T02:01:18.725Z"
+  },
+  {
+    "creatorId": "tal_024",
+    "feedback": "up",
+    "timestamp": "2025-07-31T02:01:19.477Z"
+  },
+  {
+    "creatorId": "tal_024",
+    "feedback": "down",
+    "timestamp": "2025-07-31T02:01:20.271Z"
   }
 ]
