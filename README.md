@@ -126,4 +126,3 @@ A beautiful, modern web app to match client briefs with the most relevant creato
 
 - All data is stored locally in JSON files for easy testing and review
 - The app is fully functional and ready for demo or deployment
-- Built with ❤️ to help you get selected for your dream internship! 
